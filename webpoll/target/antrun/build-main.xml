@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <copy todir="target/classes/com/pwc/hibernate" overwrite="true">
+    <fileset dir="src/main/java/com/pwc/hibernate">
+      <include name="*.hbm.xml"/>
+    </fileset>
+  </copy>
+</target>
+</project>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2015 11:11:59 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.pwc.hibernate.Poll" table="poll" catalog="picpoll">
+        <id name="idpoll" type="java.lang.Integer">
+            <column name="idpoll" />
+            <generator class="identity" />
+        </id>
+        <property name="pollTitle" type="string">
+            <column name="poll_title" length="1000" />
+        </property>
+        <property name="pollDesc" type="string">
+            <column name="poll_desc" />
+        </property>
+        <set name="pics" table="pic" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="picpoll" />
+            </key>
+            <one-to-many class="com.pwc.hibernate.Pic" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="favicon.ico">
+
+<title>Picture Voting</title>
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/dashboard.css" rel="stylesheet">
+
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="js/ie-emulation-modes-warning.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    
+</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<img alt="Generic placeholder thumbnail" src="favicon.ico" style="width: 50px; height=50px; " >
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				
+			</div>
+		
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Vote</a></li>
+          <li><a href="toplist.html">Ranking</a></li>
+        </ul>
+      </div>
+       
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="index.html">Vote<span
+							class="sr-only">(current)</span></a></li>
+					<!-- <li><a href="upload.html">Upload</a></li> -->
+					<li><a href="toplist.html">Ranking</a></li>
+				</ul>
+			</div>
+			<div id="main_panel"
+				class="col-md-10 col-md-offset-2 main">
+				<h1 class="page-header">Picture Overview</h1>
+				<script type="text/javascript">
+					
+				</script>
+
+				<!-- 行开始，一行六张图 -->
+				<div class="row placeholders" id="picoverview_row6"></div>
+				<!-- 行结束 -->
+
+				<div id="bigpic"></div>
+				<div id="loadingspinner" class="spinner-loading">
+<img src="images/ajax-loader.gif" alt="Activity indicator" width="200" height="200">
+</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myErrorMsg" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">WARNING!!!</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row placeholders">
+						<img src="./images/warning.jpg"
+							class="img-rounded" alt="Generic placeholder thumbnail">
+					</div>
+					<dl class="dl-horizontal">
+						<dt>MESSAGE</dt>
+						<dd>YOU HAVE ALREADY VOTED, DUPLICATE VOTE IS NOT ALLOWED.</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="myWarningMsg" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">WARNING!!!</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row placeholders">
+						<img src="./images/warning.jpg"
+							class="img-rounded" alt="Generic placeholder thumbnail">
+					</div>
+					<dl class="dl-horizontal">
+						<dt>MESSAGE</dt>
+						<dd>YOU COULD ONLY VOTE ONCE</dd>
+						<dd>ARE YOUR SURE ABOUT THAT?</dd>
+						<dd>&nbsp;</dd>
+						<dd><button id="buttonyes" type="button" class="btn btn-primary" data-dismiss="modal">SURE</button>
+						&nbsp;&nbsp;&nbsp;
+						<button id="buttonno" type="button" class="btn btn-primary" data-dismiss="modal">LET ME THINK ABOUT IT</button></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- pic_poll -->
+	<script src="js/pic_poll.js"></script>
+	<script src="js/pic_overview.js"></script>
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

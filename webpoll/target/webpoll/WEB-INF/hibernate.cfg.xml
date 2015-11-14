@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.password">123456</property>
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost:3306/picpoll?autoReconnect=true&amp;autoReconnectForPools=true&amp;useunicode=true&amp;characterEncoding=utf8</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.search.autoregister_listeners">false</property>
+
+		<!-- 配置c3p0连接池(解决MySQL空闲8小时自动断开问题) -->
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.acquireIncrement">2</property>
+		<property name="hibernate.c3p0.checkoutTimeout">8000</property>
+		<property name="hibernate.c3p0.idleConnectionTestPeriod">2000</property>
+		<property name="hibernate.c3p0.maxIdleTime">4000</property>
+		<property name="hibernate.c3p0.maxPoolSize">1001</property>
+		<property name="hibernate.c3p0.minPoolSize">1</property>
+		<property name="hibernate.c3p0.maxStatements">0</property>
+
+		<property name="hibernate.c3p0.validate">true</property>
+		<property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
+
+
+		<mapping resource="com/pwc/hibernate/Poll.hbm.xml" />
+		<mapping resource="com/pwc/hibernate/Pic.hbm.xml" />
+		<mapping resource="com/pwc/hibernate/IpPool.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

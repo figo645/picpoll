@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2015 11:11:59 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.pwc.hibernate.IpPool" table="ip_pool" catalog="picpoll">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="ipaddress" type="string">
+            <column name="ipaddress" length="100" unique="true" />
+        </property>
+        <property name="vote4picid" type="java.lang.Integer">
+            <column name="vote4picid" />
+        </property>
+        <property name="votedatetime" type="timestamp">
+            <column name="votedatetime" length="19" />
+        </property>
+        <property name="retired" type="java.lang.Integer">
+            <column name="retired" />
+        </property>
+    </class>
+</hibernate-mapping>
